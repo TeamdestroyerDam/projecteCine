@@ -5,6 +5,10 @@
  */
 package interfazGrafica;
 
+import clase.Pelicula;
+import clase.Sala;
+import java.util.ArrayList;
+
 /**
  *
  * @author mati
@@ -17,6 +21,8 @@ public class ventanaEliminarSala extends javax.swing.JFrame {
     public ventanaEliminarSala() {
         initComponents();
         setLocationRelativeTo(null);
+        comboSala.removeAllItems();
+        cargarComboSalas();
     }
 
     /**
@@ -30,7 +36,7 @@ public class ventanaEliminarSala extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox();
+        comboSala = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
@@ -44,7 +50,7 @@ public class ventanaEliminarSala extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboSala.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel5.setText("Sala");
 
@@ -56,7 +62,7 @@ public class ventanaEliminarSala extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel5)
                 .addGap(44, 44, 44)
-                .addComponent(jComboBox1, 0, 292, Short.MAX_VALUE)
+                .addComponent(comboSala, 0, 292, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -65,7 +71,7 @@ public class ventanaEliminarSala extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -132,10 +138,18 @@ public class ventanaEliminarSala extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void cargarComboSalas(){
+        ArrayList<Sala> listaSalas = clase.Cine.obtenerSalas();
+        
+        for(Sala sala:listaSalas){
+            comboSala.addItem(sala.getNumeroSala());
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox comboSala;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;

@@ -5,6 +5,9 @@
  */
 package interfazGrafica;
 
+import clase.Pelicula;
+import java.util.ArrayList;
+
 /**
  *
  * @author mati
@@ -17,6 +20,8 @@ public class ventanaEliminarPelicula extends javax.swing.JFrame {
     public ventanaEliminarPelicula() {
         initComponents();
         setLocationRelativeTo(null);
+        comboPelicula.removeAllItems();
+        cargarComboPeliculas();
     }
 
     /**
@@ -31,7 +36,7 @@ public class ventanaEliminarPelicula extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Pelicula = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox();
+        comboPelicula = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
 
         setResizable(false);
@@ -45,7 +50,7 @@ public class ventanaEliminarPelicula extends javax.swing.JFrame {
 
         jLabel10.setText("Pelicula");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboPelicula.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout PeliculaLayout = new javax.swing.GroupLayout(Pelicula);
         Pelicula.setLayout(PeliculaLayout);
@@ -55,7 +60,7 @@ public class ventanaEliminarPelicula extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel10)
                 .addGap(43, 43, 43)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PeliculaLayout.setVerticalGroup(
@@ -64,11 +69,16 @@ public class ventanaEliminarPelicula extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jButton1.setText("Eliminar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -98,6 +108,13 @@ public class ventanaEliminarPelicula extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String nomPelicula=comboPelicula.getSelectedItem().toString();
+        
+        clase.Cine.eliminarPelicula(nomPelicula);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,11 +152,19 @@ public class ventanaEliminarPelicula extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void cargarComboPeliculas(){
+        ArrayList<Pelicula> listaPeliculas = clase.Cine.obtenerPeliculas();
+        
+        for(Pelicula peli:listaPeliculas){
+            comboPelicula.addItem(peli.getNombrePeli());
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Pelicula;
+    private javax.swing.JComboBox comboPelicula;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     // End of variables declaration//GEN-END:variables

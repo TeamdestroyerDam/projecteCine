@@ -25,31 +25,31 @@ public class Cine {
         listaSalas.add(s);
     }
 
-    public void eliminarPelicula(String nombre) {
+    public static void eliminarPelicula(String nombre) {
         int x;
         x = buscaPelicula(nombre);
         listaPeliculas.remove(x);
     }
 
-    public void eliminarSala(String numSala) {
+    public static void eliminarSala(String numSala) {
         int x;
         x = buscaSala(numSala);
         listaSalas.remove(x);
     }
 
-    public void modificarPelicula(String nombre, Pelicula p) {
+    public static void modificarPelicula(String nombre, Pelicula p) {
         int x;
         x = buscaPelicula(nombre);
         listaPeliculas.set(x, p);
     }
     
-    public void modificarSala(String numSala, Sala s) {
+    public static void modificarSala(String numSala, Sala s) {
         int x;
         x = buscaSala(numSala);
         listaSalas.set(x, s);
     }
 
-    private int buscaPelicula(String nombre) {
+    private static int buscaPelicula(String nombre) {
         int x = 0;
         for (Pelicula peli : listaPeliculas) {
             if (nombre.equals(peli.getNombrePeli())) {
@@ -61,7 +61,7 @@ public class Cine {
         return -1;
     }
     
-    private int buscaSala(String numSala) {
+    private static int buscaSala(String numSala) {
         int x = 0;
         for (Sala sal : listaSalas) {
             if (numSala.equals(sal.getNumeroSala())) {
