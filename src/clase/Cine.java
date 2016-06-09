@@ -5,7 +5,7 @@
  */
 package clase;
 
-import clase.Pelicula;
+import clase.*;
 import java.util.*;
 
 /**
@@ -13,11 +13,16 @@ import java.util.*;
  * @author DAM
  */
 public class Cine {
-    
-    ArrayList<Pelicula> listaPeliculas;
+
+    ArrayList<Pelicula> listaPeliculas = new ArrayList();
+    ArrayList<Sala> listaSalas = new ArrayList();
 
     public void añadirPelicula(Pelicula p) {
         listaPeliculas.add(p);
+    }
+
+    public void añadirSala(Sala s) {
+        listaSalas.add(s);
     }
 
     public void eliminarPelicula(String nombre) {
@@ -26,10 +31,22 @@ public class Cine {
         listaPeliculas.remove(x);
     }
 
+    public void eliminarSala(String numSala) {
+        int x;
+        x = buscaSala(numSala);
+        listaSalas.remove(x);
+    }
+
     public void modificarPelicula(String nombre, Pelicula p) {
         int x;
         x = buscaPelicula(nombre);
         listaPeliculas.set(x, p);
+    }
+    
+    public void modificarSala(String numSala, Sala s) {
+        int x;
+        x = buscaSala(numSala);
+        listaSalas.set(x, s);
     }
 
     private int buscaPelicula(String nombre) {
@@ -43,5 +60,17 @@ public class Cine {
         }
         return -1;
     }
-
+    
+    private int buscaSala(String numSala) {
+        int x = 0;
+        for (Sala sal : listaSalas) {
+            if (numSala.equals(sal.getNumeroSala())) {
+                return x;
+            } else {
+                x++;
+            }
+        }
+        return -1;
+    }
+    
 }
