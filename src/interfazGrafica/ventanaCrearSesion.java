@@ -46,7 +46,7 @@ public class ventanaCrearSesion extends javax.swing.JFrame {
         txtPrecio = new javax.swing.JTextField();
         jComboBoxSala = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnCrear = new javax.swing.JButton();
 
         setResizable(false);
 
@@ -62,6 +62,12 @@ public class ventanaCrearSesion extends javax.swing.JFrame {
         jLabel3.setText("Fecha");
 
         jLabel4.setText("Hora");
+
+        txtFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFechaActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Precio");
 
@@ -119,10 +125,10 @@ public class ventanaCrearSesion extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Crear");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCrear.setText("Crear");
+        btnCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCrearActionPerformed(evt);
             }
         });
 
@@ -137,7 +143,7 @@ public class ventanaCrearSesion extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addComponent(btnCrear)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -148,20 +154,20 @@ public class ventanaCrearSesion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(btnCrear)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         Cine cine;
         Sala sala;
         String nombre = txtNombre.getText();
         String fecha;
         String hora;
+        Sesion sesion;
         String cSala = jComboBoxSala.getName();
         String precio;
         double precios;
@@ -183,13 +189,29 @@ public class ventanaCrearSesion extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(this, "El precio de la sesion no se puede dejar en blanco");
                     }else{
                         precios = Double.parseDouble(precio);
-                        horas = Calendar.
-                        sala = new Sala(nombre,fechas,horas,precios);
+                        fechas = convertirCalendar(txtFecha.getText(), txtHora.getText());
+                        sesion = new Sesion(nombre, fechas, precios);
                     }
                 }
             }
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnCrearActionPerformed
+
+    public Calendar convertirCalendar(String fecha, String hora) {
+        String[] fechArray = fecha.split("/");
+        String[] horaArray = hora.split(":");
+        int dia = Integer.valueOf(fechArray[0]);
+        int mes = Integer.valueOf(fechArray[1]);
+        int ano = Integer.valueOf(fechArray[2]);
+        int horas = Integer.valueOf(horaArray[0]);
+        int minutos = Integer.valueOf(horaArray[1]);
+        Calendar fechaCal = new GregorianCalendar(ano, mes, dia, horas, minutos);
+        return fechaCal;
+    }
+    
+    private void txtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaActionPerformed
+
+    }//GEN-LAST:event_txtFechaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,11 +246,16 @@ public class ventanaCrearSesion extends javax.swing.JFrame {
     
     private void cargarComboSala() {
         
-            jComboBoxSala.addItem();
+        ArrayList<Sala> listaSalas = ;
+        
+        for (Sala salita : listaSalas) {
+            
+        }
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnCrear;
     private javax.swing.JComboBox jComboBoxSala;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
