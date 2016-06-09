@@ -15,7 +15,7 @@ public class Asientos {
     private String numAsiento;
     private boolean disponibilidad;
 
-    Asientos() {
+    public Asientos() {
 
     }
 

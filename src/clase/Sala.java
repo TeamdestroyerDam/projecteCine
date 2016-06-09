@@ -18,7 +18,7 @@ public class Sala {
     private int columnas;
     private boolean sala3d;
 
-    Sala() {
+    public Sala() {
     }
 
     public Sala(String numeroSala, int filas, int columnas, boolean sala3d) {

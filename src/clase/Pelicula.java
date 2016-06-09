@@ -24,7 +24,7 @@ public class Pelicula {
     
     ArrayList<Sesion> listaSesion;
 
-    Pelicula() {
+    public Pelicula() {
         this.listaSesion=new ArrayList();
     }
 
