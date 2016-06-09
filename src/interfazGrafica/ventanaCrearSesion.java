@@ -243,7 +243,7 @@ public class ventanaCrearSesion extends javax.swing.JFrame {
             }
         });
     }
-    
+    /*
     private void cargarComboSala() {
         
         ArrayList<Sala> listaSalas = ;
@@ -253,7 +253,7 @@ public class ventanaCrearSesion extends javax.swing.JFrame {
         }
         
     }
-
+*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrear;
     private javax.swing.JComboBox jComboBoxSala;
