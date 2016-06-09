@@ -16,29 +16,19 @@ public class Sesion {
 
     private String nombreSession;
     private Calendar fecha;
-    private Calendar hora;
     private double precio;
 
     ArrayList<Asientos> listaAsientos;
 
-    Sesion() {
+    public Sesion() {
         this.listaAsientos = new ArrayList();
     }
 
-    public Sesion(String nombreSession, Calendar fecha, Calendar hora, double precio) {
+    public Sesion(String nombreSession, Calendar fecha, double precio) {
         this.nombreSession = nombreSession;
         this.fecha = fecha;
-        this.hora = hora;
         this.precio = precio;
         this.listaAsientos = new ArrayList();
-    }
-
-    public Calendar getHora() {
-        return hora;
-    }
-
-    public void setHora(Calendar hora) {
-        this.hora = hora;
     }
 
     public String getNombreSession() {
