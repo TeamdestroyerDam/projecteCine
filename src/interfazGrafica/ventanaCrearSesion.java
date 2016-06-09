@@ -246,12 +246,11 @@ public class ventanaCrearSesion extends javax.swing.JFrame {
     
     private void cargarComboSala() {
         
-        ArrayList<Sala> listaSalas = ;
+        ArrayList<Sala> listaSalas = clase.Cine.obtenerSalas();
         
         for (Sala salita : listaSalas) {
-            
+           jComboBoxSala.addItem(salita.getNumeroSala());
         }
-        
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrear;

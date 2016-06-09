@@ -14,8 +14,8 @@ import java.util.*;
  */
 public class Cine {
 
-    ArrayList<Pelicula> listaPeliculas = new ArrayList();
-    ArrayList<Sala> listaSalas = new ArrayList();
+    static ArrayList<Pelicula> listaPeliculas = new ArrayList();
+    static ArrayList<Sala> listaSalas = new ArrayList();
 
     public void añadirPelicula(Pelicula p) {
         listaPeliculas.add(p);
@@ -71,6 +71,16 @@ public class Cine {
             }
         }
         return -1;
+    }
+    
+    public static ArrayList <Pelicula> obtenerPeliculas() {
+        
+        return listaPeliculas;
+    }
+    
+    public static ArrayList <Sala> obtenerSalas() {
+        
+        return listaSalas;
     }
     
 }
