@@ -5,6 +5,7 @@
  */
 package interfazGrafica;
 
+import clase.Cine;
 import javax.swing.UIManager;
 
 /**
@@ -19,6 +20,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     public ventanaPrincipal() {
         initComponents();
         setLocationRelativeTo(null);
+        Cine cine = new Cine();
     }
 
     /**

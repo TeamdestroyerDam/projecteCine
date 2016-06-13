@@ -21,7 +21,7 @@ public class Cine {
         listaPeliculas.add(p);
     }
 
-    public void añadirSala(Sala s) {
+    public static void añadirSala(Sala s) {
         listaSalas.add(s);
     }
 
