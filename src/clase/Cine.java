@@ -17,7 +17,7 @@ public class Cine {
     static ArrayList<Pelicula> listaPeliculas = new ArrayList();
     static ArrayList<Sala> listaSalas = new ArrayList();
 
-    public void añadirPelicula(Pelicula p) {
+    public static void añadirPelicula(Pelicula p) {
         listaPeliculas.add(p);
     }
 
@@ -49,7 +49,7 @@ public class Cine {
         listaSalas.set(x, s);
     }
 
-    private static int buscaPelicula(String nombre) {
+    public static int buscaPelicula(String nombre) {
         int x = 0;
         for (Pelicula peli : listaPeliculas) {
             if (nombre.equals(peli.getNombrePeli())) {
@@ -61,7 +61,7 @@ public class Cine {
         return -1;
     }
     
-    private static int buscaSala(String numSala) {
+    public static int buscaSala(String numSala) {
         int x = 0;
         for (Sala sal : listaSalas) {
             if (numSala.equals(sal.getNumeroSala())) {
