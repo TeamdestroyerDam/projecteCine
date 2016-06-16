@@ -31,16 +31,15 @@ public class ventanaPrincipalAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
         crearSala = new javax.swing.JMenuItem();
         modificarSala = new javax.swing.JMenuItem();
         eliminarSala = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
         crearSesion = new javax.swing.JMenuItem();
         modificarSesion = new javax.swing.JMenuItem();
         eliminarSesion = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
         crearPelicula = new javax.swing.JMenuItem();
         modificarPelicula = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
@@ -49,9 +48,7 @@ public class ventanaPrincipalAdmin extends javax.swing.JFrame {
         setLocationByPlatform(true);
         setResizable(false);
 
-        jMenu2.setText("Administrador");
-
-        jMenu3.setText("Sala");
+        jMenu1.setText("Sala");
 
         crearSala.setText("Crear");
         crearSala.addActionListener(new java.awt.event.ActionListener() {
@@ -59,7 +56,7 @@ public class ventanaPrincipalAdmin extends javax.swing.JFrame {
                 crearSalaActionPerformed(evt);
             }
         });
-        jMenu3.add(crearSala);
+        jMenu1.add(crearSala);
 
         modificarSala.setText("Modificar");
         modificarSala.addActionListener(new java.awt.event.ActionListener() {
@@ -67,7 +64,7 @@ public class ventanaPrincipalAdmin extends javax.swing.JFrame {
                 modificarSalaActionPerformed(evt);
             }
         });
-        jMenu3.add(modificarSala);
+        jMenu1.add(modificarSala);
 
         eliminarSala.setText("Eliminar");
         eliminarSala.addActionListener(new java.awt.event.ActionListener() {
@@ -75,11 +72,11 @@ public class ventanaPrincipalAdmin extends javax.swing.JFrame {
                 eliminarSalaActionPerformed(evt);
             }
         });
-        jMenu3.add(eliminarSala);
+        jMenu1.add(eliminarSala);
 
-        jMenu2.add(jMenu3);
+        jMenuBar1.add(jMenu1);
 
-        jMenu4.setText("Sesion");
+        jMenu2.setText("Sesión");
 
         crearSesion.setText("Crear");
         crearSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +84,7 @@ public class ventanaPrincipalAdmin extends javax.swing.JFrame {
                 crearSesionActionPerformed(evt);
             }
         });
-        jMenu4.add(crearSesion);
+        jMenu2.add(crearSesion);
 
         modificarSesion.setText("Modificar");
         modificarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +92,7 @@ public class ventanaPrincipalAdmin extends javax.swing.JFrame {
                 modificarSesionActionPerformed(evt);
             }
         });
-        jMenu4.add(modificarSesion);
+        jMenu2.add(modificarSesion);
 
         eliminarSesion.setText("Eliminar");
         eliminarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -103,11 +100,11 @@ public class ventanaPrincipalAdmin extends javax.swing.JFrame {
                 eliminarSesionActionPerformed(evt);
             }
         });
-        jMenu4.add(eliminarSesion);
+        jMenu2.add(eliminarSesion);
 
-        jMenu2.add(jMenu4);
+        jMenuBar1.add(jMenu2);
 
-        jMenu5.setText("Pelicula");
+        jMenu6.setText("Pelicula");
 
         crearPelicula.setText("Crear");
         crearPelicula.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +112,7 @@ public class ventanaPrincipalAdmin extends javax.swing.JFrame {
                 crearPeliculaActionPerformed(evt);
             }
         });
-        jMenu5.add(crearPelicula);
+        jMenu6.add(crearPelicula);
 
         modificarPelicula.setText("Modificar");
         modificarPelicula.addActionListener(new java.awt.event.ActionListener() {
@@ -123,7 +120,7 @@ public class ventanaPrincipalAdmin extends javax.swing.JFrame {
                 modificarPeliculaActionPerformed(evt);
             }
         });
-        jMenu5.add(modificarPelicula);
+        jMenu6.add(modificarPelicula);
 
         jMenuItem10.setText("Eliminar");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
@@ -131,11 +128,9 @@ public class ventanaPrincipalAdmin extends javax.swing.JFrame {
                 jMenuItem10ActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem10);
+        jMenu6.add(jMenuItem10);
 
-        jMenu2.add(jMenu5);
-
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jMenu6);
 
         setJMenuBar(jMenuBar1);
 
@@ -235,10 +230,9 @@ public class ventanaPrincipalAdmin extends javax.swing.JFrame {
     private javax.swing.JMenuItem crearSesion;
     private javax.swing.JMenuItem eliminarSala;
     private javax.swing.JMenuItem eliminarSesion;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem modificarPelicula;

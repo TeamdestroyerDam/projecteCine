@@ -93,8 +93,8 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAdminActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
-        vista.ventanaPrincipalCli principalCliGui = new vista.ventanaPrincipalCli();
-        principalCliGui.setVisible(true);
+        vista.ventanaComprarEntrada comprarEntradaGui = new vista.ventanaComprarEntrada();
+        comprarEntradaGui.setVisible(true);
     }//GEN-LAST:event_btnClienteActionPerformed
 
     /**
